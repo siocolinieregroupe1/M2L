@@ -1,0 +1,39 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+{{if 'message' in globals():}}
+<h3>{{=message}}</h3>
+<p>
+    La Maison des Ligues de Lorraine (M2L) a pour mission de fournir des espaces et des services aux différentes ligues sportives régionales ainsi qu'à d’autres structures hébergées. 
+</p>
+
+<p>
+    La M2L est une structure financée par le Conseil Régional de Lorraine dont l'administration est déléguée au Comité Régional Olympique et Sportif de Lorraine (CROSL).
+
+</p>
+{{elif 'content' in globals():}}
+{{=content}}
+{{else:}}
+{{=BEAUTIFY(response._vars)}}
+{{pass}}
+
+{{block right_sidebar}}
+<div class="panel panel-info">
+  <div class="panel-heading"><h3 class="panel-title"><a class="btn-block"
+      href="{{=URL('default','index')}}">
+       {{=T("Présentation")}}
+    </a></h3></div>
+  <div class="panel-body">
+    <i>{{=T("Informations sur la M2L")}}</i>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">{{=A(T("Services Proposés"), _href=URL('default','index'))}}</li>
+    <li class="list-group-item">{{=A(T("Nos locaux"), _href=URL('default','index'))}}</li>
+    <li class="list-group-item">{{=A(T("Notre personnel"), _href=URL('default','index'))}}</li>
+    <li class="list-group-item">{{=A(T("Parc informatique"), _href=URL('default','index'))}}</li>
+    <li class="list-group-item">{{=A(T("Satut juridique"), _href=URL('default','statutJuridique'))}}</li>
+    <li class="list-group-item">{{=A(T("Contact"), _href=URL('default','index'))}}</li>
+
+  </ul>
+</div>
+{{end}}
