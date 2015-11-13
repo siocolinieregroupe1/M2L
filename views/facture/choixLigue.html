@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+<h1>Gestion des factures </h1>
+</br></br>
+<table>
+    <tr>
+        <td>Choisir une ligue : </td>
+        <form action='listePrestation' method='post'>
+        <td>
+            <select name='listeLigue'>
+            {{for row in rowsLesLigues:}}
+               <option value='{{=row.id}}'>{{=row.nom}}</option>
+             {{pass}}
+            </select>
+        </td>
+            <td>
+                <input type='submit' value='valider'>
+            </td>
+        </form>
+    </tr>
+</table>

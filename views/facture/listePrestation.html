@@ -1,0 +1,66 @@
+{{extend 'layout.html'}}
+<h1>
+    Liste des factures
+</h1>
+
+<!-- **********************
+        Reproduction
+*************************** -->
+<h3>
+    Liste des reproduction
+</h3>
+<table border=solid,1px,black;>
+    <tr>
+        <td>Reférence machine</td>
+        <td>Quantite</td>
+        <td>Cout Unitaire</td>
+        <td>Cout total</td>
+        <td>Date Prestation</td>
+    </tr>
+    {{for row in listePrestations:}}
+                {{for rowRepro in listeRepro:}}
+                    {{if row.codeReproduction == rowRepro.id:}}
+                    <tr>
+                      <td>{{=row.codeReproduction}}</td>
+                      <td>{{=row.quantite}}</td> 
+                      <td> {{=rowRepro.PrixUnitaire}} </td>
+                      <td>{{=rowRepro.PrixUnitaire * row.quantite}}</td>
+                      <td>{{=row.datePrestation}}</td>
+                    </tr>
+                    {{pass}}
+                 {{pass}}      
+    {{pass}}  
+</table>  
+
+
+
+
+
+<!-- ************************
+        Affranchissement
+****************************** -->
+    <h3>
+        Liste des affranchissement
+    </h3>
+<table border=solid,1px,black;>
+    <tr>
+        <td>Reférence machine</td>
+        <td>Quantite</td>
+        <td>Cout Unitaire</td>
+        <td>Cout total</td>
+        <td>Date Prestation</td>
+    </tr>
+          {{for row in listePrestations:}}
+              {{for rowAff in listeAffranchissement:}}
+                  {{if row.codeAffranchissement == rowAff.id:}}
+                      <tr>
+                      <td>{{=row.codeAffranchissement}}</td>
+                      <td>{{=row.quantite}}</td> 
+                      <td>{{=rowAff.coutUnitaire}} </td>
+                      <td>{{=rowAff.coutUnitaire * row.quantite}}</td>
+                      <td>{{=row.datePrestation}}</td>
+                      </tr>
+                  {{pass}}
+              {{pass}}
+          {{pass}}
+</table>
