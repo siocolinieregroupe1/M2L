@@ -1,0 +1,43 @@
+{{extend 'layout.html'}}
+<h3>Ajouter un affranchissement</h3>
+<form action="{{=URL('ajoutAffranchissement')}}">
+    <select name="affranchissement">
+            {{for unAffranchissement in response._vars['rowsAffranchissement']:}}
+ 
+            <option value='{{=unAffranchissement.id}}'> {{=unAffranchissement.libelle}}</option>
+ 
+            {{pass}}# indique la fin de la boucle : permet de remplacer l'indentation
+        
+    </select>
+    </br></br>
+    <table>
+        <tr>
+            <td>Quantité </td>
+            <td><input type="number" name="quantiteAffranchissement"/></td>
+        </tr>
+         <tr>
+            <td></br></td>
+        </tr>
+        <tr>
+            <td>Date </td>
+            <td><input type="date" name="dateAffranchissement"/></td>
+            
+        </tr>
+        <tr>
+            <td></br></td>
+        </tr>
+        <tr>
+            <select name="idLigue">
+            {{for unNomLigue in response._vars['rowsLigue']:}}
+ 
+            <option value='{{=unNomLigue.id}}'> {{=unNomLigue.nom}}</option>
+ 
+            {{pass}}# indique la fin de la boucle : permet de remplacer l'indentation
+        
+    </select>
+            </br></br>
+        </tr>
+    </table>
+    </br>
+    <input type="submit" value="Valider" name="valider"/>
+</form>
