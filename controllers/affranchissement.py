@@ -1,8 +1,10 @@
+@auth.requires_membership('Employe CROSL')
 def saisiAffranchissement():
     rowsAffranchissement=db().select(db.affranchissement.ALL, distinct = True)
     rowsLigue=db().select(db.ligue.ALL, distinct = True)
     return locals()
 
+@auth.requires_membership('Employe CROSL')
 def ajoutAffranchissement():
     idAffranchissement = request.vars.affranchissement
     Quantite = request.vars.quantiteAffranchissement
