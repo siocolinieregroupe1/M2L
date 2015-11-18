@@ -1,0 +1,10 @@
+{{extend 'layout.html'}}
+<h3>Modifier une ressource</h3>
+<form action="{{=URL('modifierRessource2')}}">
+    <select name="typeRessource1">
+    <option value = "affranchissement">Affranchissement</option>
+    <option value = "reproduction">Reproduction</option>
+    {{pass}}# indique la fin de la boucle : permet de remplacer l'indentation
+    </select>
+    <input type="submit" value="Valider" name="valider"/>
+</form>

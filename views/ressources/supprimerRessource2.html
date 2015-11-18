@@ -1,0 +1,10 @@
+{{extend 'layout.html'}}
+<h3>Supprimer une ressource</h3>
+<form action="{{=URL('supprimerRessource3')}}">
+    <select name="choixRessourceSupp">
+    {{for uneRessource in response._vars['rowsRessource']:}}
+    <option> {{=uneRessource.libelle}}</option>
+    {{pass}}# indique la fin de la boucle : permet de remplacer l'indentation
+    <input type="submit" />
+    </select
+</form>

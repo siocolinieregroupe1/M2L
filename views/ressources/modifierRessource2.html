@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<h3>Modifier une ressource</h3>
+Choisissez la ressource à modifier :
+<form action="{{=URL('modifierRessource3')}}">
+    <select name="choixRessourceSupp1">
+    {{for uneRessource in response._vars['rowsRessource']:}}
+    <option> {{=uneRessource.libelle}}</option>
+    {{pass}}# indique la fin de la boucle : permet de remplacer l'indentation
+    <input type="submit" />
+    </select>
+</form>

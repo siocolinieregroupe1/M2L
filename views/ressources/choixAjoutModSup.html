@@ -1,0 +1,14 @@
+{{extend 'layout.html'}}
+<center><h2>GESTION DES RESSOURCES</h2>
+<form action="{{=URL('ajouterRessource')}}">
+    Ajouter une ressource
+    <input type="submit" value="Valider"  />
+</form>
+<form action="{{=URL('modifierRessource')}}">
+    Modifier une ressource
+    <input type="submit" value="Valider" />
+</form>
+<form action="{{=URL('supprimerRessource')}}">
+    Supprimer une ressource
+    <input type="submit" value="Valider"  />
+</form></center>

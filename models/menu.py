@@ -31,7 +31,7 @@ response.menu += [ (T('Offre d\'emploi'), False, URL('default', 'index'), [])]
 response.menu += [ (T('Intranet'), False, URL('default', 'index'),
                     [
                     (T('Gestion des factures'),False,URL('facture','choixLigue'),[]),
-                    (T('Gestion des ressources'),False,URL('default','index'),[])
+                    (T('Gestion des ressources'),False,URL('ressources','choixAjoutModSup'),[])
                     ]
                    )]
 
