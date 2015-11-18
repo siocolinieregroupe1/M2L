@@ -25,7 +25,8 @@ db.define_table('prestation',
                 Field('datePrestation','datetime'),
                 Field('codeLigue','reference ligue',requires=IS_IN_DB(db,db.ligue.id)),
                 Field('codeAffranchissement','reference affranchissement',requires=IS_EMPTY_OR(IS_IN_DB(db,db.affranchissement.id))),
-                Field('codeReproduction','reference reproduction',requires=IS_EMPTY_OR(IS_IN_DB(db,db.reproduction.id)))
+                Field('codeReproduction','reference reproduction',requires=IS_EMPTY_OR(IS_IN_DB(db,db.reproduction.id))),
+                Field('status','string',requires=IS_IN_SET(["Validé","A Payer"]))
                ,migrate=False)
 
 db.define_table('facture',
