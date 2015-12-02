@@ -26,15 +26,16 @@ db.define_table('prestation',
                 Field('codeLigue','reference ligue',requires=IS_IN_DB(db,db.ligue.id)),
                 Field('codeAffranchissement','reference affranchissement',requires=IS_EMPTY_OR(IS_IN_DB(db,db.affranchissement.id))),
                 Field('codeReproduction','reference reproduction',requires=IS_EMPTY_OR(IS_IN_DB(db,db.reproduction.id))),
-                Field('status','string',requires=IS_IN_SET(["Validé","A Payer"]))
+                Field('status','string',requires=IS_IN_SET(["Validé","Facturé","A Payer"]))
                ,migrate=False)
 
 db.define_table('facture',
                 Field('dateEdition','datetime'),
                 Field('dateEcheance', 'datetime'),
                 Field('dateReglement', 'datetime'),
-                Field('codePrestation','reference facture',requires=IS_IN_DB(db,db.prestation.id))
-               ,migrate=False)
+                Field('codePrestation','reference prestation',requires=IS_IN_DB(db,db.prestation.id)),
+               migrate=False,
+               fake_migrate=True)
 
 db.define_table('relance',
                 Field('dateRelance','datetime'),
