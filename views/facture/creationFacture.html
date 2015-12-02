@@ -1,0 +1,17 @@
+{{extend 'layout.html'}}
+<form action ='ajoutFacture' method='post'>
+    <table>
+        <tr><td>Date D'édition : </td><td><input type='datetime' name='dateEdition'></td></tr>
+        <tr><td>Date D'échéance : </td><td><input type='datetime' name='dateEcheance'></td></tr>
+        <tr><td><input type='submit' value='valider'></td></tr>
+        <input type='hidden' name='codeLigue' value='{{=idLigue}}'>
+        </table>
+    
+</form>
+
+{{for rows in listePrestations:}}
+<h1>
+    {{rows}}
+    <!-- Appel de la fonction permetant la création de toutes les factures-->
+</h1>
+{{pass}}
