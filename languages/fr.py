@@ -82,6 +82,7 @@
 'Forms and Validators': 'Formulaires et Validateurs',
 'Free Applications': 'Applications gratuites',
 'Function disabled': 'Fonction désactivée',
+'Gestion des Affranchissement': 'Gestion des Affranchissement',
 'Gestion des factures': 'Gestion des factures',
 'Gestion des ressources': 'Gestion des ressources',
 'Group ID': 'Groupe ID',
