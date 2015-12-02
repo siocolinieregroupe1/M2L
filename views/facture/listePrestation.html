@@ -1,6 +1,9 @@
 {{extend 'layout.html'}}
 <h1>
-    Liste des Prestations non payées par la ligue
+    Liste des Prestations non payées par la ligue : 
+    {{for row in libelleLigue:}}
+        {{=row.nom}}
+    {{pass}}
 </h1>
 
 <!-- **********************
@@ -11,6 +14,7 @@
 </h3>
 <table border=solid,1px,black;>
     <tr>
+        <td>Code Prestation</td>
         <td>Reférence machine</td>
         <td>Quantite</td>
         <td>Cout Unitaire</td>
@@ -21,6 +25,7 @@
                 {{for rowRepro in listeRepro:}}
                     {{if row.codeReproduction == rowRepro.id:}}
                     <tr>
+                      <td>{{=row.id}}</td>
                       <td>{{=row.codeReproduction}}</td>
                       <td>{{=row.quantite}}</td> 
                       <td> {{=rowRepro.PrixUnitaire}} </td>
@@ -44,6 +49,7 @@
     </h3>
 <table border=solid,1px,black;>
     <tr>
+        <td>Code Prestation</td>
         <td>Reférence machine</td>
         <td>Quantite</td>
         <td>Cout Unitaire</td>
@@ -54,6 +60,7 @@
               {{for rowAff in listeAffranchissement:}}
                   {{if row.codeAffranchissement == rowAff.id:}}
                       <tr>
+                      <td>{{=row.id}}</td>
                       <td>{{=row.codeAffranchissement}}</td>
                       <td>{{=row.quantite}}</td> 
                       <td>{{=rowAff.coutUnitaire}} </td>
@@ -64,4 +71,31 @@
               {{pass}}
           {{pass}}
 </table>
+
 </br></br></br>
+
+<h2>
+    Création d'une facture : 
+</h2>
+<form action ='ajoutFacture' method='post'>
+    <table>
+        <tr>
+            <td>Code Prestation</td>
+            <td>
+                <select name='codePrestation'>
+                {{for row in listePrestations:}}
+                   <option value='{{=row.id}}'>{{=row.id}}</option>
+                 {{pass}}
+                </select>
+            </td>
+        </tr>
+        <tr><td>Date D'édition : </td><td><input type='date' name='dateEdition'></td></tr>
+        <tr><td>Date D'échéance : </td><td><input type='date' name='dateEcheance'></td></tr>
+        <tr><td></br></td></tr>
+        <tr><td><input type='submit' value='valider'></td></tr>
+        <input type='hidden' name='codeLigue' value='{{=idLigue}}'>
+        </table>
+</form>
+
+
+</br></br>

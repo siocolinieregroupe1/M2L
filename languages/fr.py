@@ -18,6 +18,7 @@
 'Affranchissement': 'Affranchissement',
 'Ajax Recipes': 'Recettes Ajax',
 'appadmin is disabled because insecure channel': "appadmin est désactivée parce que le canal n'est pas sécurisé",
+'Apply changes': 'Apply changes',
 'Are you sure you want to delete this object?': 'Êtes-vous sûr de vouloir supprimer cet objet?',
 'Authentication': 'Authentification',
 'Available Databases and Tables': 'Bases de données et tables disponibles',
