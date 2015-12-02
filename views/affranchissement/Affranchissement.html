@@ -1,0 +1,14 @@
+{{extend 'layout.html'}}
+<center><h2>GESTION DES AFFRANCHISSEMENTS</h2>
+    </br>
+<form action="{{=URL('saisiAffranchissement')}}">
+    Ajouter un nouvel affranchissement
+    <input type="submit" value="Valider"  />
+</form>
+    </br>
+<form action="{{=URL('modifierAffranchissement')}}">
+    Modifier le coût unitaire d'un affranchissement
+    <input type="submit" value="Valider" />
+</form>
+
+</form></center>
