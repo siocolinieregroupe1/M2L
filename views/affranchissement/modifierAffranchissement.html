@@ -1,0 +1,25 @@
+{{extend 'layout.html'}}
+<h3>Modifier le coût d'un affranchissement</h3>
+<form action="{{=URL('modificationFaite')}}">
+    <select name="affranchissement">
+            {{for unAffranchissement in response._vars['rowsAffranchissement2']:}}
+ 
+            <option value='{{=unAffranchissement.id}}'> {{=unAffranchissement.libelle}}</option>
+ 
+            {{pass}}# indique la fin de la boucle : permet de remplacer l'indentation
+        
+    </select>
+    </br></br>
+    <table>
+        <tr>
+            <td>Coût :  </td>
+            <td><input type="double" name="coutAffranchissement"/></td>
+        </tr>
+         <tr>
+            <td></br></td>
+        </tr>
+       
+    </table>
+    </br>
+    <input type="submit" value="Valider" name="valider"/>
+</form>
