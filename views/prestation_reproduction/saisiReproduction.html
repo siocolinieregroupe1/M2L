@@ -1,0 +1,42 @@
+{{extend 'layout.html'}}
+
+<h1>Saisir les prestations</h1>
+
+
+ <FORM action="{{=URL('ajoutReproduction')}}">
+    <P>
+    Date :<br><INPUT type="date" name="datePrestation"></br>
+   <br> Quantite:<br><INPUT type="text" name="quantite"></br>
+        <br> Code Ligue :<select name="codeLigue"></br>
+            {{for ligue in response._vars['rowsLigue']:}}
+
+            <option value ='{{=ligue.id}}'> {{=ligue.nom}}</option>
+            {{pass}}
+            </select>
+            <br>
+
+     <br>Code Facture :<select name="codeFacture"></br>
+            {{for facture in response._vars['rowsFacture']:}}
+
+            <option value ='{{=facture.id}}'> {{=facture. dateEdition}}</option>
+            {{pass}}
+            </select>
+            <br>
+
+<br>  Code Affranchissement :<select name="codeAffranchissement"></br>
+            {{for affranchissement in response._vars['rowsAffranchissement']:}}
+
+            <option value ='{{=affranchissement.id}}'> {{=affranchissement.libelle}}</option>
+            {{pass}}
+            </select>
+            <br>
+
+<br> Code Reproduction :<select name="codeReproduction"></br>
+            {{for reproduction in response._vars['rowsReproduction']:}}
+
+            <option value ='{{=reproduction.id}}'> {{=reproduction.libelle}}</option>
+            {{pass}}
+        </select>
+    <INPUT type="submit" value="Envoyer" name="valider"/>
+    </P>
+ </FORM>
